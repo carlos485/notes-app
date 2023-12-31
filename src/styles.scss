@@ -2,7 +2,8 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+@import url("assets/icons/style.css");
 
-.text-red {
-  color: red;
+.bg-gray {
+  background-color: #dfdfdf;
 }
