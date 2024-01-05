@@ -8,11 +8,18 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { ErrorMessageComponent } from '../../layout/components/error-message/error-message.component';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [InputComponent, ButtonComponent, FormsModule, ReactiveFormsModule],
+  imports: [
+    InputComponent,
+    ButtonComponent,
+    FormsModule,
+    ReactiveFormsModule,
+    ErrorMessageComponent,
+  ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
 })
