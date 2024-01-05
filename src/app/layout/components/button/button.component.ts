@@ -10,5 +10,6 @@ import { Component, Input } from '@angular/core';
 })
 export class ButtonComponent {
   @Input() label: string = 'button';
+  @Input() icon: string = '';
   loader = false;
 }

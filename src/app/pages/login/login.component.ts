@@ -9,4 +9,17 @@ import { ButtonComponent } from '../../layout/components/button/button.component
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
 })
-export class LoginComponent {}
+export class LoginComponent {
+  type: string = 'password';
+  iconRight: string = 'nt-eye';
+
+  chageType() {
+    if (this.type === 'password') {
+      this.type = 'text';
+      this.iconRight = 'nt-eye-slash';
+    } else {
+      this.type = 'password';
+      this.iconRight = 'nt-eye';
+    }
+  }
+}
