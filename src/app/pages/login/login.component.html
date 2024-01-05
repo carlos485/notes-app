@@ -1,15 +1,29 @@
-<div class="bg-white flex justify-center items-center">
-  <form action="">
-    <h1 class="text-2xl font-bold">Iniciar Sesión</h1>
-    <app-input placeholder="Usuario" iconLeft="nt-username" />
-    <app-input
-      placeholder="Contraseña"
-      iconLeft="nt-password"
-      [type]="type"
-      [iconRight]="iconRight"
-      [buttonRight]="true"
-      (selected)="chageType()"
-    />
-    <app-button label="Ingresar" icon="nt-login" />
-  </form>
+<div class="flex">
+  <div class="bg-white flex justify-center items-center">
+    <form action="">
+      <h1 class="text-2xl font-bold">Iniciar Sesión</h1>
+      <app-input placeholder="Usuario" iconLeft="nt-username" />
+      <app-input
+        placeholder="Contraseña"
+        iconLeft="nt-password"
+        [type]="type"
+        [iconRight]="iconRight"
+        [buttonRight]="true"
+        (selected)="chageType()"
+      />
+      <app-button label="Ingresar" icon="nt-login" />
+    </form>
+  </div>
+  <div class="bg-blue-500 flex justify-center items-center">
+    <div class="text-center text-white">
+      <h1>¡Bienvenido!</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore
+        repudiandae velit amet autem sint quidem consequatur similique, nostrum
+        distinctio atque voluptate, sed quasi ea eos provident ut, numquam
+        dolores doloremque.
+      </p>
+      <app-button class="outline-white" label="Registrarme" icon="nt-login" />
+    </div>
+  </div>
 </div>
