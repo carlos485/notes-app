@@ -1,4 +1,4 @@
-<div class="bg-gray-200 p-2 flex">
+<div class="bg-gray-200 p-2 flex" [formGroup]="form">
   @if (iconLeft !== undefined) {
   <div class="text-2xl text-gray-500 mr-2"><i [className]="iconLeft"></i></div>
   }
@@ -6,6 +6,7 @@
     class="bg-transparent min-w-60 placeholder:text-gray-500"
     [type]="type ?? 'text'"
     [placeholder]="placeholder ?? ''"
+    [formControlName]="controlName"
   />
   @if (iconRight !== undefined) {
   <div

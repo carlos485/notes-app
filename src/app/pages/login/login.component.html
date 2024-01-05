@@ -1,20 +1,35 @@
-<div class="flex">
-  <div class="bg-white flex justify-center items-center">
-    <form action="">
+<div class="flex container">
+  <div class="w-1/2 bg-white flex justify-center items-center py-20 px-14">
+    <form [formGroup]="form" class="text-center" action="">
       <h1 class="text-2xl font-bold">Iniciar Sesión</h1>
-      <app-input placeholder="Usuario" iconLeft="nt-username" />
-      <app-input
-        placeholder="Contraseña"
-        iconLeft="nt-password"
-        [type]="type"
-        [iconRight]="iconRight"
-        [buttonRight]="true"
-        (selected)="chageType()"
-      />
-      <app-button label="Ingresar" icon="nt-login" />
+      <div class="py-8">
+        <div class="my-8">
+          @if (form) {
+          <app-input
+            controlName="username"
+            placeholder="Usuario"
+            iconLeft="nt-username"
+            [form]="form"
+          />
+          }
+        </div>
+        <div class="my-8">
+          <app-input
+            placeholder="Contraseña"
+            iconLeft="nt-password"
+            controlName="password"
+            [type]="type"
+            [iconRight]="iconRight"
+            [buttonRight]="true"
+            [form]="form"
+            (selected)="chageType()"
+          />
+        </div>
+      </div>
+      <app-button label="Ingresar" icon="nt-login" (click)="login()" />
     </form>
   </div>
-  <div class="bg-blue-500 flex justify-center items-center">
+  <div class="w-1/2 bg-blue-500 flex justify-center items-center py-20 px-14">
     <div class="text-center text-white">
       <h1>¡Bienvenido!</h1>
       <p>
