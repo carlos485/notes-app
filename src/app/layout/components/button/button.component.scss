@@ -1,3 +1,61 @@
-.bg-aaa {
+.bg-white-03 {
   background-color: rgba(255, 255, 255, 0.3);
+}
+
+button {
+  div {
+    transition: all 0.2s linear;
+    transform: scale(0, 1);
+  }
+  &:hover {
+    div {
+      transform: scale(1, 1);
+    }
+  }
+}
+
+.load-container {
+  padding: 0.6rem 0.25rem;
+  .loader {
+    width: 0.5rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: #fff;
+    clip-path: inset(-220%);
+    animation: load 2s infinite linear;
+  }
+}
+
+@keyframes load {
+  0% {
+    box-shadow: 0 0 0 0, 2rem 0, -2rem 0, 0 2rem, 0 -2rem;
+  }
+  10% {
+    box-shadow: 0 0 0 0, 0.5rem 0, -2rem 0, 0 2rem, 0 -2rem;
+  }
+  20% {
+    box-shadow: 0 0 0 0.05rem, 0px 0, -2rem 0, 0 2rem, 0 -2rem;
+  }
+  30% {
+    box-shadow: 0 0 0 0.05rem, 0px 0, -5rem 0, 0 2rem, 0 -2rem;
+  }
+  40% {
+    box-shadow: 0 0 0 0.1rem, 0px 0, 0px 0, 0 2rem, 0 -2rem;
+  }
+  50% {
+    box-shadow: 0 0 0 0.1rem, 0px 0, 0px 0, 0 5rem, 0 -2rem;
+  }
+  60% {
+    box-shadow: 0 0 0 0.15rem, 0px 0, 0px 0, 0 0px, 0 -2rem;
+  }
+  70% {
+    box-shadow: 0 0 0 0.15rem, 0px 0, 0px 0, 0 0px, 0 -0.15rem;
+  }
+  80% {
+    box-shadow: 0 0 0 0.2rem, 0px 0, 0px 0, 0 0px, 0 0px;
+  }
+  90%,
+  100% {
+    box-shadow: 0 0 0 0, 2rem 0, -2rem 0, 0 2rem, 0 -2rem;
+  }
 }

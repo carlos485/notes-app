@@ -1,8 +1,16 @@
-<button class="bg-blue-500 text-white py-2 px-7 rounded-xl relative text-lg">
+<button
+  type="button"
+  class="bg-blue-500 text-white py-2 px-7 rounded-xl relative text-lg"
+  (click)="loader = !loader"
+>
   <div
-    class="absolute px-1 h-full bg-aaa left-0 bottom-0 flex justify-center items-center"
+    class="absolute bg-white-03 left-0 bottom-0 py-2 px-1 h-100 rounded-r-3xl transition-all duration-500 origin-left-center"
   >
-    <i class="nt-check-circle text-xl"></i>
+    @if (!loader) {
+    <i class="text-xl nt-login"></i>
+    } @else {
+    <div class="load-container"><div class="loader"></div></div>
+    }
   </div>
   {{ label }}
 </button>
