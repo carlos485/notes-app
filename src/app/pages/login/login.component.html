@@ -11,7 +11,7 @@
             iconLeft="nt-username"
             [form]="form"
           />
-          <app-error-message />
+          <app-error-message [form]="form" field="username" />
           }
         </div>
         <div class="my-8">
@@ -25,6 +25,7 @@
             [form]="form"
             (selected)="chageType()"
           />
+          <app-error-message [form]="form" field="password" />
         </div>
       </div>
       <app-button label="Ingresar" icon="nt-login" (click)="login()" />
