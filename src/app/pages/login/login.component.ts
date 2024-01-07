@@ -10,6 +10,7 @@ import {
 } from '@angular/forms';
 import { ErrorMessageComponent } from '../../layout/components/error-message/error-message.component';
 import { AuthService } from '../../services/auth.service';
+import { ErrorListComponent } from '../../components/login/error-list/error-list.component';
 
 @Component({
   selector: 'app-login',
@@ -20,6 +21,7 @@ import { AuthService } from '../../services/auth.service';
     FormsModule,
     ReactiveFormsModule,
     ErrorMessageComponent,
+    ErrorListComponent,
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
