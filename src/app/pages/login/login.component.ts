@@ -46,6 +46,8 @@ export class LoginComponent {
   }
 
   login() {
-    console.log(this.form);
+    const values = this.form.getRawValue();
+    console.log(values);
+    this.form.markAllAsTouched();
   }
 }
