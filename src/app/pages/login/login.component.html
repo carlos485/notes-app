@@ -6,12 +6,11 @@
         <div class="my-8">
           @if (form) {
           <app-input
-            controlName="username"
+            controlName="email"
             placeholder="Usuario"
             iconLeft="nt-username"
             [form]="form"
           />
-          <app-error-message [form]="form" field="username" />
           }
         </div>
         <div class="my-8">
@@ -25,7 +24,6 @@
             [form]="form"
             (selected)="chageType()"
           />
-          <app-error-message [form]="form" field="password" />
         </div>
       </div>
       <app-button label="Ingresar" icon="nt-login" (click)="login()" />

@@ -9,6 +9,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { ErrorMessageComponent } from '../../layout/components/error-message/error-message.component';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -28,14 +29,17 @@ export class LoginComponent {
   iconRight: string = 'nt-eye';
   form: FormGroup;
 
-  constructor(private readonly form_builder: FormBuilder) {
+  constructor(
+    private readonly form_builder: FormBuilder,
+    private readonly auth_service: AuthService
+  ) {
     this.form = this.form_builder.group({
-      username: ['', [Validators.required, Validators.email]],
+      email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
     });
   }
 
-  chageType() {
+  chageType(): void {
     if (this.type === 'password') {
       this.type = 'text';
       this.iconRight = 'nt-eye-slash';
@@ -45,9 +49,41 @@ export class LoginComponent {
     }
   }
 
-  login() {
-    const values = this.form.getRawValue();
-    console.log(values);
-    this.form.markAllAsTouched();
+  fields(): any[] {
+    const fields = Object.keys(this.form.controls);
+    return fields.map((e) => {
+      const errors = Object.keys(this.form.controls[e].errors ?? {});
+      return { field: e, error: errors[0] };
+    });
+  }
+
+  fieldsErrors() {
+    return this.fields().map((e) => {
+      if (e.error === 'required') {
+        return `El campo ${e.field} es obligatorio`;
+      }
+      if (e.error === 'email') {
+        return `El campo ${e.field} debe tener el formato email`;
+      }
+      return '';
+    });
+  }
+
+  login(): void {
+    try {
+      if (this.form.invalid) {
+        this.form.markAllAsTouched();
+        console.log(this.form);
+        console.log(this.fieldsErrors());
+      } else {
+        const body = this.form.getRawValue();
+        this.auth_service.login(body).subscribe({
+          next: (e) => console.log(e),
+          error: (err) => console.log(err),
+        });
+      }
+    } catch (ex) {
+      console.log(ex);
+    }
   }
 }
