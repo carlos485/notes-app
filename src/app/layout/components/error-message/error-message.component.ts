@@ -15,7 +15,7 @@ export class ErrorMessageComponent {
   get error(): string | undefined {
     const field = this.form.get(this.field);
     if (field?.errors && (field?.touched || field?.dirty)) {
-      return Object.keys(this.form.controls[this.field].errors ?? {})[0];
+      return Object.keys(field.errors ?? {})[0];
     }
     return undefined;
   }

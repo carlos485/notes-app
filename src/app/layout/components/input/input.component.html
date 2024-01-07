@@ -1,17 +1,27 @@
-<div class="bg-gray-200 p-2 flex" [formGroup]="form">
+<div
+  class="bg-gray-200 p-2 flex"
+  [formGroup]="form"
+  [ngClass]="{ 'bg-red-200': error }"
+>
   @if (iconLeft !== undefined) {
-  <div class="text-2xl text-gray-500 mr-2"><i [className]="iconLeft"></i></div>
+  <div
+    class="text-2xl text-gray-500 mr-2"
+    [ngClass]="{ 'text-red-600': error }"
+  >
+    <i [className]="iconLeft"></i>
+  </div>
   }
   <input
     class="bg-transparent min-w-60 placeholder:text-gray-500"
     [type]="type ?? 'text'"
     [placeholder]="placeholder ?? ''"
     [formControlName]="controlName"
+    [ngClass]="{ 'placeholder:text-red-600': error }"
   />
   @if (iconRight !== undefined) {
   <div
     class="text-2xl text-gray-500 ml-2"
-    [ngClass]="{ 'cursor-pointer': buttonRight }"
+    [ngClass]="{ 'cursor-pointer': buttonRight, 'text-red-600': error }"
   >
     <i [className]="iconRight" (click)="click()"></i>
   </div>

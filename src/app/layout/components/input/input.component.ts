@@ -24,6 +24,14 @@ export class InputComponent {
   @Input() buttonRight: boolean = false;
   @Output() selected = new EventEmitter<any>();
 
+  get error(): boolean {
+    const field = this.form.get(this.controlName);
+    if (field?.errors && (field?.touched || field?.dirty)) {
+      return field.status === 'INVALID';
+    }
+    return false;
+  }
+
   click() {
     if (this.buttonRight) {
       this.selected.emit();
