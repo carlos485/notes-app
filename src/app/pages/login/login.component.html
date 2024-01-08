@@ -1,8 +1,7 @@
 <div class="flex container">
   <div class="w-1/2 bg-white flex justify-center items-center py-20 px-14">
-    <form [formGroup]="form" class="text-center" action="">
-      <h1 class="text-2xl font-bold">Iniciar Sesión</h1>
-      <app-error-list [errors]="fieldsErrors()" />
+    <form [formGroup]="form" action="">
+      <h1 class="text-3xl font-bold text-center">Iniciar Sesión</h1>
       <div class="py-8">
         <div class="my-8">
           @if (form) {
@@ -12,6 +11,7 @@
             iconLeft="nt-username"
             [form]="form"
           />
+          <app-error-message [form]="form" field="email" />
           }
         </div>
         <div class="my-8">
@@ -25,9 +25,12 @@
             [form]="form"
             (selected)="chageType()"
           />
+          <app-error-message [form]="form" field="password" />
         </div>
       </div>
-      <app-button label="Ingresar" icon="nt-login" (click)="login()" />
+      <div class="text-center">
+        <app-button label="Ingresar" icon="nt-login" (click)="login()" />
+      </div>
     </form>
   </div>
   <div class="w-1/2 bg-blue-500 flex justify-center items-center py-20 px-14">
@@ -43,3 +46,4 @@
     </div>
   </div>
 </div>
+<app-toast />

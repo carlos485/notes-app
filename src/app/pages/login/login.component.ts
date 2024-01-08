@@ -11,6 +11,7 @@ import {
 import { ErrorMessageComponent } from '../../layout/components/error-message/error-message.component';
 import { AuthService } from '../../services/auth.service';
 import { ErrorListComponent } from '../../components/login/error-list/error-list.component';
+import { ToastComponent } from '../../layout/components/toast/toast.component';
 
 @Component({
   selector: 'app-login',
@@ -21,7 +22,7 @@ import { ErrorListComponent } from '../../components/login/error-list/error-list
     FormsModule,
     ReactiveFormsModule,
     ErrorMessageComponent,
-    ErrorListComponent,
+    ToastComponent,
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',

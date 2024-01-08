@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?qj1skj');
-  src:  url('fonts/icomoon.eot?qj1skj#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?qj1skj') format('truetype'),
-    url('fonts/icomoon.woff?qj1skj') format('woff'),
-    url('fonts/icomoon.svg?qj1skj#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?376yj');
+  src:  url('fonts/icomoon.eot?376yj#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?376yj') format('truetype'),
+    url('fonts/icomoon.woff?376yj') format('woff'),
+    url('fonts/icomoon.svg?376yj#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -37,58 +37,64 @@
 .nt-check-circle:before {
   content: "\e903";
 }
-.nt-eye:before {
+.nt-error:before {
   content: "\e904";
 }
-.nt-eye-slash:before {
+.nt-eye:before {
   content: "\e905";
 }
-.nt-home:before {
+.nt-eye-slash:before {
   content: "\e906";
 }
-.nt-info-circle:before {
+.nt-home:before {
   content: "\e907";
 }
-.nt-list:before {
+.nt-info-circle:before {
   content: "\e908";
 }
-.nt-loader:before {
+.nt-list:before {
   content: "\e909";
 }
-.nt-login:before {
+.nt-loader:before {
   content: "\e90a";
 }
-.nt-moon:before {
+.nt-login:before {
   content: "\e90b";
+}
+.nt-moon:before {
+  content: "\e90c";
   color: #1c274c;
 }
 .nt-note:before {
-  content: "\e90c";
-}
-.nt-notebook:before {
   content: "\e90d";
 }
-.nt-notes:before {
+.nt-notebook:before {
   content: "\e90e";
 }
-.nt-options:before {
+.nt-notes:before {
   content: "\e90f";
 }
-.nt-password:before {
+.nt-options:before {
   content: "\e910";
 }
-.nt-plus-circle:before {
+.nt-password:before {
   content: "\e911";
 }
-.nt-settings:before {
+.nt-plus-circle:before {
   content: "\e912";
 }
-.nt-square-check:before {
+.nt-settings:before {
   content: "\e913";
 }
-.nt-user:before {
+.nt-square-check:before {
   content: "\e914";
 }
-.nt-username:before {
+.nt-times:before {
   content: "\e915";
+}
+.nt-user:before {
+  content: "\e916";
+}
+.nt-username:before {
+  content: "\e917";
 }
