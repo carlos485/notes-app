@@ -31,6 +31,7 @@ export class LoginComponent {
   type: string = 'password';
   iconRight: string = 'nt-eye';
   form: FormGroup;
+  error: boolean = false;
 
   constructor(
     private readonly form_builder: FormBuilder,
@@ -76,6 +77,10 @@ export class LoginComponent {
     try {
       if (this.form.invalid) {
         this.form.markAllAsTouched();
+        this.error = true;
+        setTimeout(() => {
+          this.error = false;
+        }, 5000);
         console.log(this.form);
         console.log(this.fieldsErrors());
       } else {

@@ -1,5 +1,6 @@
 <div
-  class="fixed flex items-center w-full max-w-xs p-4 space-x-4 text-gray-500 bg-white divide-x rtl:divide-x-reverse divide-gray-200 rounded-lg shadow bottom-5 right-5"
+  class="fixed flex items-center w-full max-w-xs p-4 space-x-4 text-gray-500 bg-white divide-x rtl:divide-x-reverse divide-gray-200 rounded-lg shadow bottom-5 right-5 transition-all duration-500 translate-y-20"
+  [ngClass]="{ 'translate-y-0': show }"
   role="alert"
 >
   <app-icon class="h-5 w-5 text-red-500 rotate-45" name="bug" />
