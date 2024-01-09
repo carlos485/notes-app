@@ -77,12 +77,6 @@ export class LoginComponent {
     try {
       if (this.form.invalid) {
         this.form.markAllAsTouched();
-        this.error = true;
-        setTimeout(() => {
-          this.error = false;
-        }, 5000);
-        console.log(this.form);
-        console.log(this.fieldsErrors());
       } else {
         const body = this.form.getRawValue();
         this.auth_service.login(body).subscribe({

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { IconComponent } from '../icon/icon.component';
 import { NgClass } from '@angular/common';
 
@@ -9,6 +9,10 @@ import { NgClass } from '@angular/common';
   templateUrl: './toast.component.html',
   styleUrl: './toast.component.scss',
 })
-export class ToastComponent {
+export class ToastComponent implements OnInit {
   @Input() show: boolean = false;
+
+  constructor() {}
+
+  ngOnInit(): void {}
 }
