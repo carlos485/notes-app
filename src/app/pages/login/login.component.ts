@@ -12,6 +12,7 @@ import { ErrorMessageComponent } from '../../layout/components/error-message/err
 import { AuthService } from '../../services/auth.service';
 import { ErrorListComponent } from '../../components/login/error-list/error-list.component';
 import { ToastComponent } from '../../layout/components/toast/toast.component';
+import { ToastService } from '../../services/toast.service';
 
 @Component({
   selector: 'app-login',
@@ -35,7 +36,8 @@ export class LoginComponent {
 
   constructor(
     private readonly form_builder: FormBuilder,
-    private readonly auth_service: AuthService
+    private readonly auth_service: AuthService,
+    private readonly toast_service: ToastService
   ) {
     this.form = this.form_builder.group({
       email: ['', [Validators.required, Validators.email]],
@@ -81,7 +83,10 @@ export class LoginComponent {
         const body = this.form.getRawValue();
         this.auth_service.login(body).subscribe({
           next: (e) => console.log(e),
-          error: (err) => console.log(err),
+          error: (err) => {
+            console.log(err.error.message);
+            this.toast_service.showToast(err.error.message);
+          },
         });
       }
     } catch (ex) {
