@@ -8,12 +8,12 @@
 }
 
 button {
-  div {
+  .icon-container {
     transition: all 0.2s linear;
     transform: scale(0, 1);
   }
   &:hover {
-    div {
+    .icon-container {
       transform: scale(1, 1);
     }
   }

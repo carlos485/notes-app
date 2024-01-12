@@ -1,4 +1,4 @@
-import { CUSTOM_ELEMENTS_SCHEMA, Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { InputComponent } from '../../layout/components/input/input.component';
 import { ButtonComponent } from '../../layout/components/button/button.component';
 import {
@@ -10,9 +10,9 @@ import {
 } from '@angular/forms';
 import { ErrorMessageComponent } from '../../layout/components/error-message/error-message.component';
 import { AuthService } from '../../services/auth.service';
-import { ErrorListComponent } from '../../components/login/error-list/error-list.component';
 import { ToastComponent } from '../../layout/components/toast/toast.component';
 import { ToastService } from '../../services/toast.service';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-login',
@@ -24,6 +24,7 @@ import { ToastService } from '../../services/toast.service';
     ReactiveFormsModule,
     ErrorMessageComponent,
     ToastComponent,
+    NgClass,
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
@@ -33,6 +34,7 @@ export class LoginComponent {
   iconRight: string = 'nt-eye';
   form: FormGroup;
   error: boolean = false;
+  viewRegister: boolean = false;
 
   constructor(
     private readonly form_builder: FormBuilder,
@@ -85,7 +87,7 @@ export class LoginComponent {
           next: (e) => console.log(e),
           error: (err) => {
             console.log(err.error.message);
-            this.toast_service.showToast(err.error.message);
+            this.toast_service.showToast('AAAA');
           },
         });
       }

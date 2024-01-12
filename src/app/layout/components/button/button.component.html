@@ -2,7 +2,8 @@
   type="button"
   class="overflow-hidden py-2 px-7 rounded-xl relative text-lg"
   [ngClass]="{
-    'bg-blue-500 dark:bg-blue-900 text-white': class === 'primary'
+    'bg-blue-500 dark:bg-blue-900 text-white': class === 'primary',
+    'border-2': class === 'outline-white'
   }"
   (click)="loader = !loader"
 >
@@ -10,7 +11,8 @@
     class="absolute bg-white-03 left-0 bottom-0 py-2 px-1 h-100 rounded-r-3xl transition-all duration-500 origin-left-center"
   >
     @if (!loader) {
-    <i class="text-xl" [className]="icon"></i>
+    <!-- <i class="text-xl" [className]="icon"></i> -->
+    <app-icon class="text-xl" name="bug" />
     } @else {
     <div class="load-container"><div class="loader"></div></div>
     }
