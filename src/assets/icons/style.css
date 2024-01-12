@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?376yj');
-  src:  url('fonts/icomoon.eot?376yj#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?376yj') format('truetype'),
-    url('fonts/icomoon.woff?376yj') format('woff'),
-    url('fonts/icomoon.svg?376yj#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?pc3iz7');
+  src:  url('fonts/icomoon.eot?pc3iz7#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?pc3iz7') format('truetype'),
+    url('fonts/icomoon.woff?pc3iz7') format('woff'),
+    url('fonts/icomoon.svg?pc3iz7#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -31,13 +31,13 @@
 .nt-book:before {
   content: "\e901";
 }
-.nt-checkbox-filled:before {
+.nt-bug:before {
   content: "\e902";
 }
-.nt-check-circle:before {
+.nt-checkbox-filled:before {
   content: "\e903";
 }
-.nt-error:before {
+.nt-check-circle:before {
   content: "\e904";
 }
 .nt-eye:before {
@@ -83,18 +83,21 @@
 .nt-plus-circle:before {
   content: "\e912";
 }
-.nt-settings:before {
+.nt-register:before {
   content: "\e913";
 }
-.nt-square-check:before {
+.nt-settings:before {
   content: "\e914";
 }
-.nt-times:before {
+.nt-square-check:before {
   content: "\e915";
 }
-.nt-user:before {
+.nt-times:before {
   content: "\e916";
 }
-.nt-username:before {
+.nt-user:before {
   content: "\e917";
+}
+.nt-username:before {
+  content: "\e918";
 }

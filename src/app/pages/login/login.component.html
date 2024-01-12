@@ -1,30 +1,37 @@
-<div class="relative flex container h-10 w-4/12 bg-white">
+<div class="relative flex container h-1/4 bg-white">
   <div
-    class="w-6/12 h-10 transition-all ease-in-out duration-700"
+    class="w-1/2 h-10 transition-all ease-in-out duration-700"
     [ngClass]="{ 'translate-x-full opacity-0': viewRegister }"
   >
     Login
   </div>
-  <div
+  <!-- <div
     class="w-full h-10 transition-all ease-in-out duration-700 text-white opacity-0 text-center z-50"
     [ngClass]="{ '-translate-x-1/4 opacity-0 z-0': !viewRegister }"
   >
     Mensaje Login
-  </div>
-  <div
-    class="w-6/12 h-10 z-50 transition-all ease-in-out duration-700 text-white"
-    [ngClass]="{ 'translate-x-full opacity-0': viewRegister }"
-  >
-    Mensaje Register
-  </div>
-  <div
-    class="w-6/12 h-10 transition-all ease-in-out duration-700 opacity-0"
-    [ngClass]="{ '-translate-x-full opacity-100': !viewRegister }"
-  >
+  </div> -->
+  <div class="w-1/2 h-full transition-all ease-in-out duration-700">
+    <div
+      class="w-1/2 h-full absolute z-50 transition-all ease-in-out duration-700 flex justify-center items-center"
+      [ngClass]="{ 'translate-x-full opacity-0': viewRegister }"
+    >
+      <div class="text-white block text-center">
+        <div class="text-3xl mb-5">¡Bienvenido!</div>
+        <div class="my-5 px-8 text-lg text-center">
+          Si no te encuentras registrado, puedes hacerlo dandole clic al botón
+          :)
+        </div>
+        <div class="text-6xl my-6">
+          <i class="nt-arrow-down"></i>
+        </div>
+        <app-button class="outline-white" label="Registrarme" />
+      </div>
+    </div>
     Register
   </div>
   <div
-    class="absolute h-10 w-6/12 bg-blue-500 transition-all ease-in-out duration-700"
+    class="absolute h-full w-6/12 bg-blue-500 transition-all ease-in-out duration-700"
     [ngClass]="{ 'translate-x-full': !viewRegister }"
   ></div>
   <!--   <div
