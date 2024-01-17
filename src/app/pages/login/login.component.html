@@ -8,16 +8,35 @@
       [ngClass]="{ 'translate-x-1/2': viewRegister }"
     >
       <div
-        class="absolute w-1/2 h-full transition-all duration-500 ease-in-out text-center"
+        class="absolute w-1/2 h-full transition-all duration-500 ease-in-out flex justify-center items-center"
         [ngClass]="{ '-translate-x-1/4': !viewRegister }"
       >
-        Message login
+        <div class="block text-center">
+          <div class="text-3xl mb-5">¡Bienvenido de Nuevo!</div>
+          <div class="my-5 px-8 text-lg text-center">
+            Si ya tienes una cuenta, puedes ingresar dandole clic al botón :)
+          </div>
+          <div class="text-6xl my-6">
+            <i class="nt-arrow-down"></i>
+          </div>
+          <app-button class="outline-white" label="Ingresar" />
+        </div>
       </div>
       <div
-        class="absolute w-1/2 h-full right-0 transition-all duration-500 ease-in-out"
+        class="absolute w-1/2 h-full right-0 transition-all duration-500 ease-in-out flex justify-center items-center"
         [ngClass]="{ 'translate-x-1/4': viewRegister }"
       >
-        Message register
+        <div class="block text-center">
+          <div class="text-3xl mb-5">¡Bienvenido!</div>
+          <div class="my-5 px-8 text-lg text-center">
+            Si no te encuentras registrado, puedes hacerlo dandole clic al botón
+            :)
+          </div>
+          <div class="text-6xl my-6">
+            <i class="nt-arrow-down"></i>
+          </div>
+          <app-button class="outline-white" label="Registrarme" />
+        </div>
       </div>
     </div>
   </div>
@@ -75,20 +94,3 @@
   </div> -->
 </div>
 <button (click)="viewRegister = !viewRegister">AAAA</button>
-
-<!-- <div
-        class="absolute top-0 h-full w-1/2 transition-all ease-in-out duration-700 flex justify-center items-center"
-        [ngClass]="{ 'translate-x-1/4': viewRegister }"
-      >
-        <div class="text-white block text-center">
-          <div class="text-3xl mb-5">¡Bienvenido!</div>
-          <div class="my-5 px-8 text-lg text-center">
-            Si no te encuentras registrado, puedes hacerlo dandole clic al botón
-            :)
-          </div>
-          <div class="text-6xl my-6">
-            <i class="nt-arrow-down"></i>
-          </div>
-          <app-button class="outline-white" label="Registrarme" />
-        </div>
-      </div> -->
