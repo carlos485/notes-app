@@ -1,4 +1,7 @@
 .container {
-  width: 50rem;
+  width: 22rem;
   height: 30rem;
+  @media (min-width: 1024px) {
+    width: 50rem;
+  }
 }
