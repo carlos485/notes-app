@@ -1,6 +1,18 @@
-<div class="relative flex container h-1/4 bg-white dark:bg-zinc-700">
+<div class="relative flex container h-1/4 bg-white dark:bg-zinc-700 text-white">
   <div
-    class="absolute w-1/2 h-full bg-blue-500 dark:bg-blue-900 transition-all ease-in-out duration-500 text-white overflow-hidden right-0"
+    class="absolute w-1/2 h-full transition-all duration-500 ease-in-out"
+    [ngClass]="{ 'translate-x-full opacity-0': viewRegister }"
+  >
+    Form Login
+  </div>
+  <div
+    class="absolute w-1/2 h-full transition-all duration-500 ease-in-out opacity-0"
+    [ngClass]="{ 'translate-x-full opacity-100': viewRegister }"
+  >
+    Form register
+  </div>
+  <div
+    class="absolute w-1/2 h-full bg-blue-500 dark:bg-blue-900 transition-all ease-in-out duration-500 overflow-hidden right-0"
     [ngClass]="{ '-translate-x-full': viewRegister }"
   >
     <div
