@@ -1,0 +1,43 @@
+<form [formGroup]="form">
+  <h1 class="text-3xl font-bold text-center dark:text-gray-300">
+    {{ register ? "Crear Cuenta" : "Iniciar Sesión" }}
+  </h1>
+  <div class="py-8">
+    @if (register) {
+    <div class="mb-8 mt-2">
+      <app-input
+        controlName="name"
+        placeholder="Nombre"
+        iconLeft="nt-username"
+        [form]="form"
+      />
+      <app-error-message [form]="form" field="name" />
+    </div>
+    }
+    <div class="my-8">
+      <app-input
+        controlName="email"
+        placeholder="Usuario"
+        iconLeft="nt-username"
+        [form]="form"
+      />
+      <app-error-message [form]="form" field="email" />
+    </div>
+    <div class="my-8">
+      <app-input
+        placeholder="Contraseña"
+        iconLeft="nt-password"
+        controlName="password"
+        [type]="type"
+        [iconRight]="iconRight"
+        [buttonRight]="true"
+        [form]="form"
+        (selected)="chageType()"
+      />
+      <app-error-message [form]="form" field="password" />
+    </div>
+  </div>
+  <div class="text-center">
+    <app-button label="Ingresar" icon="nt-login" />
+  </div>
+</form>

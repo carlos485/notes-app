@@ -13,6 +13,7 @@ import { AuthService } from '../../services/auth.service';
 import { ToastComponent } from '../../layout/components/toast/toast.component';
 import { ToastService } from '../../services/toast.service';
 import { NgClass } from '@angular/common';
+import { FormComponent } from '../../components/login/form/form.component';
 
 @Component({
   selector: 'app-login',
@@ -20,6 +21,7 @@ import { NgClass } from '@angular/common';
   imports: [
     InputComponent,
     ButtonComponent,
+    FormComponent,
     FormsModule,
     ReactiveFormsModule,
     ErrorMessageComponent,

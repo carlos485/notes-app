@@ -3,46 +3,13 @@
     class="absolute w-1/2 h-full transition-all duration-700 ease-in-out flex justify-center items-center py-20 px-14"
     [ngClass]="{ 'translate-x-full opacity-0': viewRegister }"
   >
-    <form [formGroup]="form" action="">
-      <h1 class="text-3xl font-bold text-center dark:text-gray-300">
-        Iniciar Sesión
-      </h1>
-      <div class="py-8">
-        <div class="my-8">
-          @if (form) {
-          <app-input
-            controlName="email"
-            placeholder="Usuario"
-            iconLeft="nt-username"
-            [form]="form"
-          />
-          <app-error-message [form]="form" field="email" />
-          }
-        </div>
-        <div class="my-8">
-          <app-input
-            placeholder="Contraseña"
-            iconLeft="nt-password"
-            controlName="password"
-            [type]="type"
-            [iconRight]="iconRight"
-            [buttonRight]="true"
-            [form]="form"
-            (selected)="chageType()"
-          />
-          <app-error-message [form]="form" field="password" />
-        </div>
-      </div>
-      <div class="text-center">
-        <app-button label="Ingresar" icon="nt-login" (click)="login()" />
-      </div>
-    </form>
+    <app-form-login />
   </div>
   <div
-    class="absolute w-1/2 h-full transition-all duration-700 ease-in-out opacity-0"
+    class="absolute w-1/2 h-full transition-all duration-700 ease-in-out opacity-0 flex justify-center items-center py-20 px-14"
     [ngClass]="{ 'translate-x-full opacity-100': viewRegister }"
   >
-    Form register
+    <app-form-login [register]="true" />
   </div>
   <div
     class="absolute w-1/2 h-full bg-blue-500 dark:bg-blue-900 transition-all ease-in-out duration-700 overflow-hidden right-0"
