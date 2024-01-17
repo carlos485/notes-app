@@ -38,6 +38,9 @@
     </div>
   </div>
   <div class="text-center">
-    <app-button label="Ingresar" icon="nt-login" />
+    <app-button
+      label="{{ register ? 'Registrarme' : 'Ingresar' }}"
+      icon="{{ register ? 'nt-register' : 'nt-login' }}"
+    />
   </div>
 </form>

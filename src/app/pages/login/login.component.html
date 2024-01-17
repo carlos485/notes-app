@@ -31,7 +31,12 @@
           <div class="text-6xl my-6">
             <i class="nt-arrow-down"></i>
           </div>
-          <app-button class="outline-white" label="Ingresar" />
+          <app-button
+            class="outline-white"
+            label="Ingresar"
+            icon="nt-login"
+            (click)="viewRegister = false"
+          />
         </div>
       </div>
       <div
@@ -47,10 +52,14 @@
           <div class="text-6xl my-6">
             <i class="nt-arrow-down"></i>
           </div>
-          <app-button class="outline-white" label="Registrarme" />
+          <app-button
+            class="outline-white"
+            label="Registrarme"
+            icon="nt-register"
+            (click)="viewRegister = true"
+          />
         </div>
       </div>
     </div>
   </div>
 </div>
-<button (click)="viewRegister = !viewRegister">AAAA</button>
