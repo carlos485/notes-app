@@ -1,42 +1,16 @@
-<!-- <div
-  class="bg-gray-200 dark:bg-zinc-400 p-2 flex"
-  [formGroup]="form"
-  [ngClass]="{ 'bg-red-200': error }"
->
-  @if (iconLeft !== undefined) {
-  <div
-    class="text-2xl text-gray-500 dark:text-gray-800 mr-2"
-    [ngClass]="{ 'text-red-600': error }"
-  >
-    <i [className]="iconLeft"></i>
-  </div>
-  }
-  <input
-    class="bg-transparent min-w-60 placeholder:text-gray-500 dark:placeholder:text-gray-200 dark:text-white"
-    [type]="type ?? 'text'"
-    [placeholder]="placeholder ?? ''"
-    [formControlName]="controlName"
-    [ngClass]="{ 'placeholder:text-red-600': error }"
-  />
-  @if (iconRight !== undefined) {
-  <div
-    class="text-2xl text-gray-500 dark:text-gray-800 ml-2"
-    [ngClass]="{ 'cursor-pointer': buttonRight, 'text-red-600': error }"
-  >
-    <i [className]="iconRight" (click)="click()"></i>
-  </div>
-  }
-</div>
- -->
 <div class="relative">
   <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 text-lg">
     <i class="{{ iconLeft }} text-gray-500 dark:text-gray-400"></i>
   </div>
   <input
-    class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-900 dark:focus:border-blue-900"
-    [placeholder]="placeholder"
-    [ngClass]="{ 'pe-10': iconRight }"
-    [type]="type"
+    class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-zinc-600 dark:border-zinc-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-900 dark:focus:border-blue-900"
+    [placeholder]="placeholder ?? ''"
+    [ngClass]="{
+      'pe-10': iconRight,
+      'bg-red-50 border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 dark:text-red-500 dark:placeholder-red-500 dark:border-red-500':
+        error
+    }"
+    [type]="type ?? 'text'"
   />
   <div class="absolute inset-y-0 end-0 flex items-center pe-3.5 text-lg">
     <i
@@ -46,3 +20,15 @@
     ></i>
   </div>
 </div>
+
+<!-- <div>
+  <input
+    type="text"
+    id="error"
+    class="bg-red-50 border border-red-500 text-red-900 placeholder-red-700 text-sm rounded-lg focus:ring-red-500 dark:bg-gray-700 focus:border-red-500 block w-full p-2.5 dark:text-red-500 dark:placeholder-red-500 dark:border-red-500"
+    placeholder="Error input"
+  />
+  <p class="mt-2 text-sm text-red-600 dark:text-red-500">
+    <span class="font-medium">Oh, snapp!</span> Some error message.
+  </p>
+</div> -->
