@@ -9,9 +9,11 @@
     <div class="py-5">
       <app-input
         iconLeft="nt-password"
-        iconRight="nt-eye"
+        [iconRight]="iconRight"
         placeholder="Contraseña"
-        type="password"
+        [type]="type"
+        [buttonRight]="true"
+        (selected)="chageType()"
       />
     </div>
     <div class="my-8"><app-button label="Ingresar" icon="nt-login" /></div>
