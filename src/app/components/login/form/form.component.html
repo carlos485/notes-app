@@ -1,5 +1,8 @@
 <form [formGroup]="form">
-  <h1 class="text-3xl font-bold text-center dark:text-gray-300">
+  <h1
+    class="text-3xl font-bold text-center dark:text-gray-300"
+    (click)="select.emit()"
+  >
     {{ register ? "Crear Cuenta" : "Iniciar Sesión" }}
   </h1>
   <div class="py-8">

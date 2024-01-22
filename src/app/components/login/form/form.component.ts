@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
@@ -25,6 +25,7 @@ import { ButtonComponent } from '../../../layout/components/button/button.compon
 })
 export class FormComponent {
   @Input() register: boolean = false;
+  @Output() select = new EventEmitter<any>();
   form: FormGroup;
   type: string = 'password';
   iconRight: string = 'nt-eye';
