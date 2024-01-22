@@ -1,4 +1,22 @@
-.container {
-  width: 25rem;
-  height: 40rem;
+.h-32rem {
+  height: 32rem;
+}
+
+.-translate-y-28rem {
+  transform: translateY(-28rem);
+}
+
+.login label {
+  color: #573b8a;
+  transform: scale(0.6);
+}
+
+.signup.active ~ .login {
+  transform: translateY(-500px);
+}
+.signup.active ~ .login label {
+  transform: scale(1);
+}
+.signup.active label {
+  transform: scale(0.6);
 }

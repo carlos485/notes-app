@@ -1,6 +1,19 @@
-<div
-  class="container bg-white dark:bg-zinc-700 flex justify-center items-center"
->
+<div class="w-96 h-32rem overflow-hidden bg-white dark:bg-zinc-700 text-white">
+  <div class="relative h-full w-full" [ngClass]="{ active: viewRegister }">
+    <h1 class="cursor-pointer" (click)="viewRegister = false">
+      Iniciar sesión
+    </h1>
+  </div>
+
+  <div
+    class="bg-blue-500 dark:bg-blue-900 h-52 transition-all duration-700 ease-in-out -translate-y-12"
+    [ngClass]="{ '-translate-y-28rem': viewRegister }"
+  >
+    <h1 class="cursor-pointer" (click)="viewRegister = true">Registrarme</h1>
+  </div>
+</div>
+
+<!-- <div class="container bg-white dark:bg-zinc-700">
   <div class="block text-center">
     <div class="dark:text-white text-3xl my-5">Iniciar Sesión</div>
     <div class="py-5">
@@ -17,8 +30,8 @@
       />
     </div>
     <div class="my-8"><app-button label="Ingresar" icon="nt-login" /></div>
-  </div>
-  <!-- <div class="py-12 px-7">
+  </div> -->
+<!-- <div class="py-12 px-7">
     <div class="text-3xl dark:text-gray-300 my-3">Iniciar Sesión</div>
     <div class="py-5">
       <app-input iconLeft="nt-username" placeholder="Usuario"></app-input>
@@ -34,8 +47,11 @@
   </div>
   <div class="bg-blue-500 dark:bg-blue-900 py-3 text-white text-center">
     <div class="text-xl cursor-pointer">Registrarme</div>
-  </div> -->
-</div>
+  </div> --><!-- 
+  <div class="h-16 bg-blue-500 dark:bg-blue-900 w-full text-white text-center">
+    <h2 class="text-2xl">Registrarme</h2>
+  </div>
+</div> -->
 
 <!-- <div class="relative flex container h-1/4 bg-white dark:bg-zinc-700 text-white">
   <div
