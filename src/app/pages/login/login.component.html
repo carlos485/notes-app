@@ -1,4 +1,7 @@
-<div class="w-96 h-32rem overflow-hidden bg-white dark:bg-zinc-700 text-white">
+<div
+  class="w-96 h-32rem overflow-hidden bg-white dark:bg-zinc-700 text-white transition-all duration-700 ease-in-out"
+  [ngClass]="{ 'h-36rem': viewRegister }"
+>
   <div
     class="relative h-full w-full transition-all duration-700 ease-in-out px-12 py-20"
     [ngClass]="{ 'py-4': viewRegister }"
@@ -8,7 +11,7 @@
 
   <div
     class="bg-blue-500 dark:bg-blue-900 h-32rem transition-all duration-700 ease-in-out -translate-y-12 px-12"
-    [ngClass]="{ '-translate-y-28rem py-12': viewRegister }"
+    [ngClass]="{ '-translate-y-32rem py-12': viewRegister }"
   >
     <app-form-login
       [active]="viewRegister"

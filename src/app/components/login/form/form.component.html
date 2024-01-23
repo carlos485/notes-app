@@ -45,6 +45,7 @@
     <app-button
       label="{{ register ? 'Registrarme' : 'Ingresar' }}"
       icon="{{ register ? 'nt-register' : 'nt-login' }}"
+      [class]="register ? 'outline-white' : 'primary'"
     />
   </div>
 </form>
