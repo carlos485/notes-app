@@ -6,11 +6,12 @@ import {
   FormsModule,
   ReactiveFormsModule,
 } from '@angular/forms';
+import { ErrorMessageComponent } from '../error-message/error-message.component';
 
 @Component({
   selector: 'app-input',
   standalone: true,
-  imports: [NgClass, ReactiveFormsModule, FormsModule],
+  imports: [NgClass, ReactiveFormsModule, FormsModule, ErrorMessageComponent],
   templateUrl: './input.component.html',
   styleUrl: './input.component.scss',
 })
