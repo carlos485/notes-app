@@ -1,16 +1,20 @@
 <div class="w-96 h-32rem overflow-hidden bg-white dark:bg-zinc-700 text-white">
   <div
-    class="relative h-full w-full py-20 px-12"
-    [ngClass]="{ active: viewRegister }"
+    class="relative h-full w-full transition-all duration-700 ease-in-out px-12 py-20"
+    [ngClass]="{ 'py-4': viewRegister }"
   >
-    <app-form-login (select)="viewRegister = false" />
+    <app-form-login [active]="!viewRegister" (select)="viewRegister = false" />
   </div>
 
   <div
-    class="bg-blue-500 dark:bg-blue-900 h-32rem transition-all duration-700 ease-in-out -translate-y-12"
-    [ngClass]="{ '-translate-y-28rem': viewRegister }"
+    class="bg-blue-500 dark:bg-blue-900 h-32rem transition-all duration-700 ease-in-out -translate-y-12 px-12"
+    [ngClass]="{ '-translate-y-28rem py-12': viewRegister }"
   >
-    <app-form-login [register]="true" (select)="viewRegister = true" />
+    <app-form-login
+      [active]="viewRegister"
+      [register]="true"
+      (select)="viewRegister = true"
+    />
   </div>
 </div>
 

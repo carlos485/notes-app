@@ -1,6 +1,7 @@
 <form [formGroup]="form">
   <h1
-    class="text-3xl font-bold text-center dark:text-gray-300"
+    class="text-3xl font-bold text-center dark:text-gray-300 transition-all duration-700 ease-in-out"
+    [ngClass]="{ 'scale-100': active, 'cursor-pointer scale-75': !active }"
     (click)="select.emit()"
   >
     {{ register ? "Crear Cuenta" : "Iniciar Sesión" }}

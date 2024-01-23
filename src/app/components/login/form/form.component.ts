@@ -9,6 +9,7 @@ import {
 import { InputComponent } from '../../../layout/components/input/input.component';
 import { ErrorMessageComponent } from '../../../layout/components/error-message/error-message.component';
 import { ButtonComponent } from '../../../layout/components/button/button.component';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-form-login',
@@ -19,12 +20,14 @@ import { ButtonComponent } from '../../../layout/components/button/button.compon
     InputComponent,
     ButtonComponent,
     ErrorMessageComponent,
+    NgClass,
   ],
   templateUrl: './form.component.html',
   styleUrl: './form.component.scss',
 })
 export class FormComponent {
   @Input() register: boolean = false;
+  @Input() active: boolean = false;
   @Output() select = new EventEmitter<any>();
   form: FormGroup;
   type: string = 'password';
