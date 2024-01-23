@@ -38,7 +38,6 @@ export class FormComponent {
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
-      repeatPassword: ['', Validators.required],
     });
   }
 
@@ -50,5 +49,9 @@ export class FormComponent {
       this.type = 'password';
       this.iconRight = 'nt-eye';
     }
+  }
+
+  submit(): void {
+    console.log(this.form.getRawValue());
   }
 }

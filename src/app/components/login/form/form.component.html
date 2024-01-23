@@ -1,4 +1,4 @@
-<form [formGroup]="form">
+<form [formGroup]="form" (ngSubmit)="submit()">
   <h1
     class="text-3xl font-bold text-center dark:text-gray-300 transition-all duration-700 ease-in-out"
     [ngClass]="{ 'scale-100': active, 'cursor-pointer scale-75': !active }"
@@ -46,6 +46,7 @@
       label="{{ register ? 'Registrarme' : 'Ingresar' }}"
       icon="{{ register ? 'nt-register' : 'nt-login' }}"
       [class]="register ? 'outline-white' : 'primary'"
+      (click)="submit()"
     />
   </div>
 </form>
