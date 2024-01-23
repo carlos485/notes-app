@@ -1,9 +1,6 @@
 @if (error) {
-<div class="text-left text-red-400 italic">
-  @switch (error) { @case ('required') {
-  <small>Este campo es obligatorio</small>
-  } @case ('email') {
-  <small>El campo debe ser un email</small>
-  } }
-</div>
+<p class="mt-2 text-sm text-red-600 dark:text-red-500">
+  @switch (error) { @case ('required') { Este campo es obligatorio } @case
+  ('email') { El campo debe ser un email } }
+</p>
 }
