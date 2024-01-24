@@ -1,8 +1,10 @@
 <div
-  class="fixed flex items-center w-full max-w-xs p-4 space-x-4 text-gray-500 bg-white divide-x rtl:divide-x-reverse divide-gray-200 rounded-lg shadow bottom-5 right-5 transition-all duration-500"
-  [ngClass]="{ 'translate-y-20': !show }"
+  class="fixed flex items-center w-full max-w-xs p-4 space-x-4 text-gray-500 dark:text-gray-400 bg-white dark:bg-zinc-700 divide-x rtl:divide-x-reverse divide-gray-200 dark:divide-gray-400 rounded-lg shadow bottom-5 right-5 transition-all duration-500"
   role="alert"
 >
-  <app-icon class="h-5 w-5 text-red-500 rotate-45" name="bug" />
+  <app-icon
+    class="h-5 w-5 text-red-500 dark:text-red-600 rotate-45"
+    name="bug"
+  />
   <div class="ps-4 text-sm font-normal">{{ message }}</div>
 </div>
