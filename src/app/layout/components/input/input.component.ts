@@ -23,7 +23,10 @@ export class InputComponent {
   @Input() iconLeft: string | undefined;
   @Input() iconRight: string | undefined;
   @Input() buttonRight: boolean = false;
+  @Input() showBar: boolean = false;
   @Output() selected = new EventEmitter<any>();
+  mediumPassword: RegExp = /^(?=.*[a-zA-Z])(?=.*\d).{6,}$/;
+  strongPassword: RegExp = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[@#$%^&+=!]).{8,}$/;
 
   get error(): boolean {
     const field = this.form.get(this.controlName);
@@ -33,9 +36,47 @@ export class InputComponent {
     return false;
   }
 
+  get barProperties(): any {
+    const password = this.form.getRawValue().password;
+    let color: string;
+    let percentage: string;
+    let label: string;
+    if (password.length === 0) {
+      color = '';
+      percentage = '0%';
+      label = '';
+    } else if (this.strongPassword.test(password)) {
+      color = 'bg-green-600';
+      percentage = '100%';
+      label = 'Segura';
+    } else if (this.mediumPassword.test(password)) {
+      color = 'bg-yellow-500';
+      percentage = '70%';
+      label = 'Aceptable';
+    } else {
+      color = 'bg-red-600';
+      percentage = '20%';
+      label = 'Debil';
+    }
+    return { color, percentage, label };
+  }
+
   click() {
     if (this.buttonRight) {
       this.selected.emit();
     }
+  }
+
+  setPassword(): string {
+    const password: string = this.form.getRawValue().password;
+    let value;
+    if (password.length < 6) {
+      value = '20%';
+    } else if (password.length > 5 && password.length < 10) {
+      value = '60%';
+    } else {
+      value = '100%';
+    }
+    return value;
   }
 }

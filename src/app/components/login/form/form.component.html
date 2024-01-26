@@ -10,9 +10,10 @@
     @if (register) {
     <div class="mb-8 mt-2">
       <app-input
+        placeholder="Nombre"
+        iconLeft="nt-user"
         controlName="name"
         placeholder="Nombre"
-        iconLeft="nt-username"
         [form]="form"
       />
       <app-error-message [form]="form" field="name" />
@@ -36,6 +37,7 @@
         [iconRight]="iconRight"
         [buttonRight]="true"
         [form]="form"
+        [showBar]="register"
         (selected)="chageType()"
       />
       <app-error-message [form]="form" field="password" />

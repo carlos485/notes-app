@@ -36,7 +36,7 @@ export class LoginComponent {
   iconRight: string = 'nt-eye';
   form: FormGroup;
   error: boolean = false;
-  viewRegister: boolean = false;
+  viewRegister: boolean = true;
 
   constructor(
     private readonly form_builder: FormBuilder,

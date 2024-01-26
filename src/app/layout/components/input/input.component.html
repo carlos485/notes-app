@@ -28,3 +28,18 @@
   </div>
 </div>
 <app-error-message />
+
+@if (showBar) {
+<div class="w-full bg-gray-200 rounded-full h-1.5 mb-4 dark:bg-zinc-400 mt-2">
+  <div
+    class="bg-blue-600 h-1.5 rounded-full transition-all duration-1000 {{
+      barProperties['color']
+    }}"
+    [style]="{ width: barProperties['percentage'] }"
+  ></div>
+</div>
+@if (barProperties['label'] !== '') {
+<div class="dark:text-gray-300 text-sm">
+  Contraseña {{ barProperties["label"] }}
+</div>
+} }
