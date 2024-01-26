@@ -42,6 +42,17 @@
       />
       <app-error-message [form]="form" field="password" />
     </div>
+    <div class="my-8">
+      <app-input
+        placeholder="Contraseña"
+        iconLeft="nt-password"
+        [type]="type"
+        [iconRight]="iconRight"
+        [buttonRight]="true"
+        (selected)="chageType()"
+      />
+      <!-- <app-error-message [form]="form" field="password" /> -->
+    </div>
   </div>
   <div class="text-center">
     <app-button

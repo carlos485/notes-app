@@ -66,17 +66,4 @@ export class InputComponent {
       this.selected.emit();
     }
   }
-
-  setPassword(): string {
-    const password: string = this.form.getRawValue().password;
-    let value;
-    if (password.length < 6) {
-      value = '20%';
-    } else if (password.length > 5 && password.length < 10) {
-      value = '60%';
-    } else {
-      value = '100%';
-    }
-    return value;
-  }
 }
