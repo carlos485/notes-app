@@ -42,6 +42,7 @@
       />
       <app-error-message [form]="form" field="password" />
     </div>
+    @if (register) {
     <div class="my-8">
       <app-input
         placeholder="Contraseña"
@@ -53,6 +54,7 @@
       />
       <!-- <app-error-message [form]="form" field="password" /> -->
     </div>
+    }
   </div>
   <div class="text-center">
     <app-button
