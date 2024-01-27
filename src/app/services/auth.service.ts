@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, catchError, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -12,7 +12,22 @@ export class AuthService {
     this.url = 'http://localhost:3000';
   }
 
-  login(body: object): Observable<any> {
-    return this.http.post(`${this.url}/api/v1/auth/login`, body);
+  register(body: any): Observable<any> {
+    const { name, email, password } = body;
+    return this.http.post(`${this.url}/api/v1/auth/register`, {
+      name,
+      email,
+      password,
+    });
+  }
+
+  login(body: any): Observable<any> {
+    const { email, password } = body;
+    return this.http
+      .post(`${this.url}/api/v1/auth/login`, {
+        email,
+        password,
+      })
+      .pipe(catchError((obj) => throwError(obj.error.message)));
   }
 }

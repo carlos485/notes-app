@@ -49,7 +49,7 @@ export class FormComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.register) {
-      this.form.controls['name'].setValidators(Validators.required);
+      this.form.controls['name'];
     }
   }
 
@@ -69,11 +69,12 @@ export class FormComponent implements OnInit {
         this.form.markAllAsTouched();
       } else {
         const body = this.form.getRawValue();
-        this.auth_service.login(body).subscribe({
+        const method = this.register ? 'register' : 'login';
+        this.auth_service[method](body).subscribe({
           next: (e) => console.log(e),
-          error: (err) => {
-            console.log(err.error.message);
-            this.toast_service.showToast('AAAA');
+          error: (error) => {
+            console.log(error);
+            this.toast_service.showToast(error);
           },
         });
       }
