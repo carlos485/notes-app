@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import {
+  AbstractControl,
   FormBuilder,
   FormGroup,
   FormsModule,
@@ -35,6 +36,8 @@ export class FormComponent implements OnInit {
   form: FormGroup;
   type: string = 'password';
   iconRight: string = 'nt-eye';
+  mediumPassword: RegExp = /^(?=.*[a-zA-Z])(?=.*\d).{6,}$/;
+  strongPassword: RegExp = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[@#$%^&+=!]).{8,}$/;
 
   constructor(
     private readonly _fb: FormBuilder,
@@ -55,6 +58,22 @@ export class FormComponent implements OnInit {
       this.form.controls['name'].addValidators(Validators.required);
       this.form.controls['repeatPassword'].addValidators(Validators.required);
     }
+  }
+
+  validatePassword() {
+    return (control: AbstractControl) => {
+      return (
+        this.mediumPassword.test(control.value) ||
+        this.strongPassword.test(control.value)
+      );
+    };
+  }
+
+  validateRepeatPassword() {
+    return (control: AbstractControl) => {
+      const password = this.form.getRawValue().password;
+      return password === control.value;
+    };
   }
 
   chageType(): void {
