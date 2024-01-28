@@ -57,16 +57,17 @@ export class FormComponent implements OnInit {
     if (this.register) {
       this.form.controls['name'].addValidators(Validators.required);
       this.form.controls['repeatPassword'].addValidators(Validators.required);
+      // this.form.controls['password'].addValidators();
+      this.form.controls['repeatPassword'].addValidators([
+        Validators.required,
+        this.validateRepeatPassword,
+      ]);
     }
   }
 
   validatePassword() {
-    return (control: AbstractControl) => {
-      return (
-        this.mediumPassword.test(control.value) ||
-        this.strongPassword.test(control.value)
-      );
-    };
+    const value = this.form.getRawValue().password;
+    return this.mediumPassword.test(value) || this.strongPassword.test(value);
   }
 
   validateRepeatPassword() {
@@ -87,6 +88,7 @@ export class FormComponent implements OnInit {
   }
 
   submit(): void {
+    console.log(this.form);
     try {
       if (this.form.invalid) {
         this.form.markAllAsTouched();
