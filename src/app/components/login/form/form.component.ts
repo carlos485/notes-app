@@ -12,6 +12,7 @@ import { ButtonComponent } from '../../../layout/components/button/button.compon
 import { NgClass } from '@angular/common';
 import { AuthService } from '../../../services/auth.service';
 import { ToastService } from '../../../services/toast.service';
+import { LoaderService } from '../../../services/loader.service';
 
 @Component({
   selector: 'app-form-login',
@@ -38,7 +39,8 @@ export class FormComponent implements OnInit {
   constructor(
     private readonly _fb: FormBuilder,
     private readonly auth_service: AuthService,
-    private readonly toast_service: ToastService
+    private readonly toast_service: ToastService,
+    private readonly loader_service: LoaderService
   ) {
     this.form = this._fb.group({
       name: '',
@@ -70,13 +72,18 @@ export class FormComponent implements OnInit {
       if (this.form.invalid) {
         this.form.markAllAsTouched();
       } else {
+        this.loader_service.setValue(true);
         const body = this.form.getRawValue();
         const method = this.register ? 'register' : 'login';
         this.auth_service[method](body).subscribe({
-          next: (e) => console.log(e),
+          next: (e) => {
+            console.log(e);
+            this.loader_service.setValue(false);
+          },
           error: (error) => {
             console.log(error);
             this.toast_service.showToast(error);
+            this.loader_service.setValue(false);
           },
         });
       }
