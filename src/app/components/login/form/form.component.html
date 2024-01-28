@@ -47,12 +47,14 @@
       <app-input
         placeholder="Contraseña"
         iconLeft="nt-password"
+        controlName="repeatPassword"
         [type]="type"
         [iconRight]="iconRight"
         [buttonRight]="true"
+        [form]="form"
         (selected)="chageType()"
       />
-      <!-- <app-error-message [form]="form" field="password" /> -->
+      <app-error-message [form]="form" field="repeatPassword" />
     </div>
     }
   </div>

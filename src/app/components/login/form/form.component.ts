@@ -44,12 +44,14 @@ export class FormComponent implements OnInit {
       name: '',
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
+      repeatPassword: '',
     });
   }
 
   ngOnInit(): void {
     if (this.register) {
-      this.form.controls['name'];
+      this.form.controls['name'].addValidators(Validators.required);
+      this.form.controls['repeatPassword'].addValidators(Validators.required);
     }
   }
 
