@@ -14,7 +14,10 @@ import { NgClass } from '@angular/common';
 import { AuthService } from '../../../services/auth.service';
 import { ToastService } from '../../../services/toast.service';
 import { LoaderService } from '../../../services/loader.service';
-import { validatePassword } from '../../../shared/validators';
+import {
+  validatePassword,
+  validateRepeatPassword,
+} from '../../../shared/validators';
 
 @Component({
   selector: 'app-form-login',
@@ -59,7 +62,10 @@ export class FormComponent implements OnInit {
       this.form.controls['name'].addValidators(Validators.required);
       this.form.controls['repeatPassword'].addValidators(Validators.required);
       this.form.controls['password'].addValidators(validatePassword);
-      this.form.controls['repeatPassword'].addValidators([Validators.required]);
+      this.form.controls['repeatPassword'].addValidators([
+        Validators.required,
+        validateRepeatPassword('password', this.form),
+      ]);
     }
   }
 

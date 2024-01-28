@@ -7,23 +7,17 @@ export const strongPassword: RegExp =
 export const validatePassword = (
   control: AbstractControl
 ): ValidationErrors | null => {
-  const value = control.value as string;
+  const value = control.getRawValue() as string;
   const obj = {
     isValid: mediumPassword.test(value) || strongPassword.test(value),
   };
   return obj;
 };
 
-export const validateRepeatPassword = (
-  control: AbstractControl,
-  field: string,
-  form: FormGroup
-): ValidationErrors | null => {
-  const value = control.value as string;
-  //   const password = this.form.getRawValue().password;
-  //       return password === control.value;
-  const obj = {
-    isValid: mediumPassword.test(value) || strongPassword.test(value),
+export const validateRepeatPassword = (field: string, form: FormGroup) => {
+  return (control: AbstractControl): ValidationErrors | null => {
+    const password = form.getRawValue()[field];
+    const obj = { isEqual: password === control.getRawValue() };
+    return obj;
   };
-  return obj;
 };
