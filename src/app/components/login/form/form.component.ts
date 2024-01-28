@@ -14,6 +14,7 @@ import { NgClass } from '@angular/common';
 import { AuthService } from '../../../services/auth.service';
 import { ToastService } from '../../../services/toast.service';
 import { LoaderService } from '../../../services/loader.service';
+import { validatePassword } from '../../../shared/validators';
 
 @Component({
   selector: 'app-form-login',
@@ -57,24 +58,9 @@ export class FormComponent implements OnInit {
     if (this.register) {
       this.form.controls['name'].addValidators(Validators.required);
       this.form.controls['repeatPassword'].addValidators(Validators.required);
-      // this.form.controls['password'].addValidators();
-      this.form.controls['repeatPassword'].addValidators([
-        Validators.required,
-        this.validateRepeatPassword,
-      ]);
+      this.form.controls['password'].addValidators(validatePassword);
+      this.form.controls['repeatPassword'].addValidators([Validators.required]);
     }
-  }
-
-  validatePassword() {
-    const value = this.form.getRawValue().password;
-    return this.mediumPassword.test(value) || this.strongPassword.test(value);
-  }
-
-  validateRepeatPassword() {
-    return (control: AbstractControl) => {
-      const password = this.form.getRawValue().password;
-      return password === control.value;
-    };
   }
 
   chageType(): void {
