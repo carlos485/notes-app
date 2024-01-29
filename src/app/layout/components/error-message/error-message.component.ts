@@ -19,4 +19,12 @@ export class ErrorMessageComponent {
     }
     return undefined;
   }
+
+  get minLength(): string | undefined {
+    const field = this.form.get(this.field);
+    if (this.error === 'minlength' && field) {
+      return field.errors?.['minlength']['requiredLength'];
+    }
+    return undefined;
+  }
 }
