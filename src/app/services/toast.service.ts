@@ -5,13 +5,13 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class ToastService {
-  private toastSubject = new BehaviorSubject<string | null>(null);
+  private toastSubject = new BehaviorSubject<any>(null);
   toastState$ = this.toastSubject.asObservable();
 
   constructor() {}
 
-  showToast(message: string) {
-    this.toastSubject.next(message);
+  showToast(type: string, message: string) {
+    this.toastSubject.next({ type, message });
   }
 
   hideToast() {

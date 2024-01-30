@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?pc3iz7');
-  src:  url('fonts/icomoon.eot?pc3iz7#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?pc3iz7') format('truetype'),
-    url('fonts/icomoon.woff?pc3iz7') format('woff'),
-    url('fonts/icomoon.svg?pc3iz7#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?n15t4g');
+  src:  url('fonts/icomoon.eot?n15t4g#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?n15t4g') format('truetype'),
+    url('fonts/icomoon.woff?n15t4g') format('woff'),
+    url('fonts/icomoon.svg?n15t4g#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -92,12 +92,15 @@
 .nt-square-check:before {
   content: "\e915";
 }
-.nt-times:before {
+.nt-thumb-up:before {
   content: "\e916";
 }
-.nt-user:before {
+.nt-times:before {
   content: "\e917";
 }
-.nt-username:before {
+.nt-user:before {
   content: "\e918";
+}
+.nt-username:before {
+  content: "\e919";
 }

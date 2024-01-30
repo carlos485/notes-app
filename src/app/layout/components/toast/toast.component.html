@@ -3,9 +3,10 @@
   [ngClass]="{ 'translate-y-20': !show }"
   role="alert"
 >
-  <app-icon
-    class="h-5 w-5 text-red-500 dark:text-red-600 rotate-45"
-    name="bug"
-  />
+  @switch (type) { @case ('success') {
+  <i class="nt-thumb-up text-green dark:text-green-600 text-xl font-bold"></i>
+  } @case ('error') {
+  <i class="nt-bug text-red dark:text-red-600 rotate-45 text-xl font-bold"></i>
+  } }
   <div class="ps-4 text-sm font-normal">{{ message }}</div>
 </div>

@@ -96,14 +96,14 @@ export class FormComponent implements OnInit {
           next: (e) => {
             console.log(e);
             if (this.register) {
-              this.toast_service.showToast(e);
+              this.toast_service.showToast('success', e);
             }
             this._rt.navigate(['/']);
             this.loader_service.setValue(false);
           },
           error: (error) => {
             console.log(error);
-            this.toast_service.showToast(error);
+            this.toast_service.showToast('error', error);
             this.loader_service.setValue(false);
           },
         });
