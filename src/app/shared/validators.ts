@@ -8,16 +8,18 @@ export const validatePassword = (
   control: AbstractControl
 ): ValidationErrors | null => {
   const value = control.getRawValue() as string;
-  const obj = {
-    isValid: mediumPassword.test(value) || strongPassword.test(value),
-  };
-  return obj;
+  if (!mediumPassword.test(value) && !strongPassword.test(value)) {
+    return { isInvalid: true };
+  }
+  return null;
 };
 
 export const validateRepeatPassword = (field: string, form: FormGroup) => {
   return (control: AbstractControl): ValidationErrors | null => {
     const password = form.getRawValue()[field];
-    const obj = { isEqual: password === control.getRawValue() };
-    return obj;
+    if (password !== control.getRawValue()) {
+      return { isDifferent: true };
+    }
+    return null;
   };
 };
