@@ -8,7 +8,14 @@ import {
   provideHttpClient,
 } from '@angular/common/http';
 import { provideStore } from '@ngrx/store';
+import { JWT_OPTIONS, JwtHelperService, JwtModule } from '@auth0/angular-jwt';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes), provideHttpClient(), provideStore()],
+  providers: [
+    provideRouter(routes),
+    provideHttpClient(),
+    provideStore(),
+    JwtHelperService,
+    { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
+  ],
 };
