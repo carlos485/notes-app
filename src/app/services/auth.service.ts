@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
-import { Observable, catchError, throwError } from 'rxjs';
+import { Observable, catchError, throwError, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -20,7 +20,10 @@ export class AuthService {
         email,
         password,
       })
-      .pipe(catchError((obj) => throwError(obj.error.message)));
+      .pipe(
+        map(() => 'Usuario registrado con exito'),
+        catchError((obj) => throwError(obj.error.message))
+      );
   }
 
   login(body: any): Observable<any> {

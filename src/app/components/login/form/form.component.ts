@@ -18,6 +18,7 @@ import {
   validatePassword,
   validateRepeatPassword,
 } from '../../../shared/validators';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-form-login',
@@ -45,6 +46,7 @@ export class FormComponent implements OnInit {
 
   constructor(
     private readonly _fb: FormBuilder,
+    private readonly _rt: Router,
     private readonly auth_service: AuthService,
     private readonly toast_service: ToastService,
     private readonly loader_service: LoaderService
@@ -93,6 +95,10 @@ export class FormComponent implements OnInit {
         this.auth_service[method](body).subscribe({
           next: (e) => {
             console.log(e);
+            if (this.register) {
+              this.toast_service.showToast(e);
+            }
+            this._rt.navigate(['/']);
             this.loader_service.setValue(false);
           },
           error: (error) => {
