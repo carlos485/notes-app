@@ -38,8 +38,8 @@
     [style]="{ width: password | barPercentage }"
   ></div>
 </div>
-@if (barProperties['label'] !== '') {
+@if ((password | typePassword) !== '') {
 <div class="dark:text-gray-300 text-sm">
-  Contraseña {{ barProperties["label"] }}
+  {{ password | typePassword }}
 </div>
 } }
