@@ -7,11 +7,18 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 import { ErrorMessageComponent } from '../error-message/error-message.component';
+import { ColorBarPipe } from '../../../pipes/register/color-bar.pipe';
 
 @Component({
   selector: 'app-input',
   standalone: true,
-  imports: [NgClass, ReactiveFormsModule, FormsModule, ErrorMessageComponent],
+  imports: [
+    NgClass,
+    ReactiveFormsModule,
+    FormsModule,
+    ErrorMessageComponent,
+    ColorBarPipe,
+  ],
   templateUrl: './input.component.html',
   styleUrl: './input.component.scss',
 })
@@ -34,6 +41,10 @@ export class InputComponent {
       return field.status === 'INVALID';
     }
     return false;
+  }
+
+  get password(): string {
+    return this.form.getRawValue().password;
   }
 
   get barProperties(): any {
