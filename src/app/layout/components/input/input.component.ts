@@ -28,14 +28,14 @@ import { TypePasswordPipe } from '../../../pipes/register/type-password.pipe';
 })
 export class InputComponent {
   @Input() form: FormGroup = new FormGroup({ field: new FormControl('') });
-  @Input() controlName: string = 'field';
   @Input() type: string | undefined;
+  @Input() controlName: string = 'field';
   @Input() placeholder: string | undefined;
   @Input() iconLeft: string | undefined;
-  @Input() iconRight: string | undefined;
   @Input() buttonRight: boolean = false;
   @Input() showBar: boolean = false;
   @Output() selected = new EventEmitter<any>();
+  iconRight: string | undefined;
 
   get error(): boolean {
     const field = this.form.get(this.controlName);
@@ -49,9 +49,13 @@ export class InputComponent {
     return this.form.getRawValue().password;
   }
 
-  click() {
-    if (this.buttonRight) {
-      this.selected.emit();
+  changeType() {
+    if (this.type === 'password') {
+      this.type = 'text';
+      this.iconRight = 'nt-eye-slash';
+    } else {
+      this.type = 'password';
+      this.iconRight = 'nt-eye';
     }
   }
 }

@@ -10,22 +10,24 @@
     [placeholder]="placeholder ?? ''"
     [formControlName]="controlName"
     [ngClass]="{
-      'pe-10': iconRight,
+      'pe-10': buttonRight,
       'bg-red-50 border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 dark:text-red-500 dark:placeholder-red-500 dark:border-red-500':
         error
     }"
-    [type]="type ?? 'text'"
+    [type]="type"
   />
+  @if (buttonRight) {
   <div class="absolute inset-y-0 end-0 flex items-center pe-3.5 text-lg">
     <i
-      class="{{ iconRight }} text-gray-500 dark:text-gray-400"
+      class="{{ iconRight ?? 'nt-eye' }} text-gray-500 dark:text-gray-400"
       [ngClass]="{
         'cursor-pointer': buttonRight,
         'text-red-700 dark:text-red-500': error
       }"
-      (click)="click()"
+      (click)="changeType()"
     ></i>
   </div>
+  }
 </div>
 <app-error-message />
 
