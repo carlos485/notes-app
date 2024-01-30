@@ -7,7 +7,8 @@ import {
   HttpClientModule,
   provideHttpClient,
 } from '@angular/common/http';
+import { provideStore } from '@ngrx/store';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes), provideHttpClient()],
+  providers: [provideRouter(routes), provideHttpClient(), provideStore()],
 };
