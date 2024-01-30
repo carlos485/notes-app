@@ -8,6 +8,7 @@ import {
 } from '@angular/forms';
 import { ErrorMessageComponent } from '../error-message/error-message.component';
 import { ColorBarPipe } from '../../../pipes/register/color-bar.pipe';
+import { BarPercentagePipe } from '../../../pipes/register/bar-percentage.pipe';
 
 @Component({
   selector: 'app-input',
@@ -18,6 +19,7 @@ import { ColorBarPipe } from '../../../pipes/register/color-bar.pipe';
     FormsModule,
     ErrorMessageComponent,
     ColorBarPipe,
+    BarPercentagePipe,
   ],
   templateUrl: './input.component.html',
   styleUrl: './input.component.scss',

@@ -35,7 +35,7 @@
     class="bg-blue-600 h-1.5 rounded-full transition-all duration-1000 {{
       password | colorBar
     }}"
-    [style]="{ width: barProperties['percentage'] }"
+    [style]="{ width: password | barPercentage }"
   ></div>
 </div>
 @if (barProperties['label'] !== '') {
