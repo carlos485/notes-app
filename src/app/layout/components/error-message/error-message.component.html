@@ -2,7 +2,8 @@
 <p class="mt-2 text-sm text-red-600 dark:text-red-500">
   @switch (error) { @case ('required') { Este campo es obligatorio } @case
   ('email') { El campo debe ser un email } @case ('minlength') { El campo debe
-  contener mínimo {{ minLength }} caracteres } @case ('isEqual') { Las
-  contraseñas no coinciden } }
+  contener mínimo {{ minLength }} caracteres } @case ('isDifferent') { Las
+  contraseñas no coinciden } @case ('isInvalid') { La contraseña no es valida }
+  }
 </p>
 }
