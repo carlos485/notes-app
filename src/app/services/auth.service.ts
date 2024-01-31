@@ -43,9 +43,18 @@ export class AuthService {
       .pipe(
         map((obj: any) => {
           const decode = this.jwt.decodeToken(obj['access_token']);
-          const user: User = User.fromLogin(decode, obj['access_token']);
+          const user = User.fromLogin(decode, obj['access_token']);
+          localStorage.setItem('user', JSON.stringify(user));
         }),
         catchError((obj) => throwError(obj.error.message))
       );
+  }
+
+  isAuth(): boolean {
+    const user = localStorage.getItem('user');
+    if (user) {
+      return true;
+    }
+    return false;
   }
 }
