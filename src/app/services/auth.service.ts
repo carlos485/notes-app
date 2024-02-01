@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
 import { Observable, catchError, throwError, map } from 'rxjs';
-import { JwtHelperService, JwtModule } from '@auth0/angular-jwt';
+import { JwtHelperService } from '@auth0/angular-jwt';
 import { User } from '../models/user.model';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
@@ -12,7 +13,8 @@ export class AuthService {
 
   constructor(
     @Inject(HttpClient) private http: HttpClient,
-    private readonly jwt: JwtHelperService
+    private readonly jwt: JwtHelperService,
+    private readonly _rt: Router
   ) {
     this.url = 'http://localhost:3000';
   }
