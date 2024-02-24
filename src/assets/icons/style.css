@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?n15t4g');
-  src:  url('fonts/icomoon.eot?n15t4g#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?n15t4g') format('truetype'),
-    url('fonts/icomoon.woff?n15t4g') format('woff'),
-    url('fonts/icomoon.svg?n15t4g#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?kwdvx7');
+  src:  url('fonts/icomoon.eot?kwdvx7#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?kwdvx7') format('truetype'),
+    url('fonts/icomoon.woff?kwdvx7') format('woff'),
+    url('fonts/icomoon.svg?kwdvx7#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -86,21 +86,24 @@
 .nt-register:before {
   content: "\e913";
 }
-.nt-settings:before {
+.nt-search:before {
   content: "\e914";
 }
-.nt-square-check:before {
+.nt-settings:before {
   content: "\e915";
 }
-.nt-thumb-up:before {
+.nt-square-check:before {
   content: "\e916";
 }
-.nt-times:before {
+.nt-thumb-up:before {
   content: "\e917";
 }
-.nt-user:before {
+.nt-times:before {
   content: "\e918";
 }
-.nt-username:before {
+.nt-user:before {
   content: "\e919";
+}
+.nt-username:before {
+  content: "\e91a";
 }
