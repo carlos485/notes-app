@@ -9,4 +9,16 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
+  buttons: any[]
+
+  constructor() {
+    this.buttons = [
+      { icon: 'nt-search' },
+      { icon: 'nt-home' },
+      { icon: 'nt-plus-circle' },
+      { icon: 'nt-check-circle' },
+      { icon: 'nt-book' }
+    ]
+  }
+
 }

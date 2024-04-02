@@ -3,38 +3,38 @@
 }
 
 .btn {
-  &__1 {
+  &__0 {
     background-color: #28f5b8;
   }
-  &__2 {
+  &__1 {
     background-color: #28f5e9;
   }
-  &__3 {
+  &__2 {
     background-color: #5df528;
   }
-  &__4 {
+  &__3 {
     background-color: #f1f528;
   }
-  &__5 {
+  &__4 {
     background-color: #f5a328;
   }
 }
 
 @media (prefers-color-scheme: dark) {
   .btn {
-    &__1 {
+    &__0 {
       background-color: #168f6a;
     }
-    &__2 {
+    &__1 {
       background-color: #168f87;
     }
-    &__3 {
+    &__2 {
       background-color: #358f16;
     }
-    &__4 {
+    &__3 {
       background-color: #8c8f16;
     }
-    &__5 {
+    &__4 {
       background-color: #8f5f16;
     }
   }
