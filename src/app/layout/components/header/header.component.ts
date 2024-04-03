@@ -11,14 +11,15 @@ import { Component } from '@angular/core';
 export class HeaderComponent {
 
   buttons: any[]
+  showSearch: boolean = false
 
   constructor() {
     this.buttons = [
-      { icon: 'nt-search' },
-      { icon: 'nt-home' },
-      { icon: 'nt-plus-circle' },
-      { icon: 'nt-check-circle' },
-      { icon: 'nt-book' }
+      { icon: 'nt-search', class: 'bg-teal-300 dark:bg-teal-500' },
+      { icon: 'nt-home', class: 'bg-cyan-400 dark:bg-cyan-500' },
+      { icon: 'nt-plus-circle', class: 'bg-lime-500 dark:bg-green-600' },
+      { icon: 'nt-check-circle', class: 'bg-yellow-400 dark:bg-yellow-500' },
+      { icon: 'nt-book', class: 'bg-amber-500 dark:bg-amber-600' }
     ]
   }
 

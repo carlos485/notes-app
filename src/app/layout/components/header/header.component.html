@@ -2,16 +2,29 @@
   <div class="h-full flex items-center">
     @for (item of buttons; track item.icon; let index = $index) {
     <div
-      class="text-xl mx-2 flex justify-center items-center cursor-pointer rounded-full w-8 h-8 dark:text-gray-800"
+      class="transition-all duration-500 text-xl mx-2 flex justify-center items-center cursor-pointer rounded-full h-8 w-8 dark:text-gray-800 {{
+        item.class
+      }}"
       [ngClass]="{
-        'bg-teal-300 dark:bg-teal-500': index === 0,
-        'bg-cyan-400 dark:bg-cyan-500': index === 1,
-        'bg-lime-500 dark:bg-green-600': index === 2,
-        'bg-yellow-400 dark:bg-yellow-500': index === 3,
-        'bg-amber-500 dark:bg-amber-600': index === 4
+        'w-44': showSearch && index === 0
       }"
     >
-      <i [className]="item.icon"></i>
+      <i [className]="item.icon" (click)="showSearch = true"></i>
+      @if (index === 0) {
+      <input
+        class="bg-transparent transition-all duration-500 text-sm placeholder:text-gray-800"
+        type="text"
+        placeholder="Buscar..."
+        [ngClass]="{ 'w-32': showSearch, 'w-0': !showSearch }"
+      />
+      <div
+        class="overflow-hidden transition-all duration-500"
+        [ngClass]="{ 'w-0': !showSearch, 'w-5': showSearch }"
+        (click)="showSearch = false"
+      >
+        <i class="nt-times"></i>
+      </div>
+      }
     </div>
     }
   </div>
