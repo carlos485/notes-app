@@ -21,4 +21,8 @@ export class HeaderComponent {
     ]
   }
 
+  // changeTheme(): void {
+  //   this.theme_service.toggleTheme()
+  // }
+
 }
