@@ -2,17 +2,18 @@
   <div class="h-full flex items-center">
     @for (item of buttons; track item.icon; let index = $index) {
     <div
-      class="transition-all duration-500 text-xl mx-2 flex justify-center items-center cursor-pointer rounded-full h-8 w-8 dark:text-gray-800 {{
+      class="transition-all duration-500 text-xl mx-2 flex justify-center items-center cursor-pointer rounded-full h-8 dark:text-gray-800 {{
         item.class
       }}"
       [ngClass]="{
-        'w-44': showSearch && index === 0
+        'w-44': showSearch && index === 0,
+        'w-8': !showSearch || index !== 0
       }"
     >
       <i [className]="item.icon" (click)="showSearch = true"></i>
       @if (index === 0) {
       <input
-        class="bg-transparent transition-all duration-500 text-sm placeholder:text-gray-800"
+        class="bg-transparent transition-all duration-500 text-sm placeholder:text-gray-800 focus-visible:outline-0"
         type="text"
         placeholder="Buscar..."
         [ngClass]="{ 'w-32': showSearch, 'w-0': !showSearch }"

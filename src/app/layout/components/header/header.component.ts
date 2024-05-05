@@ -1,10 +1,11 @@
 import { NgClass } from '@angular/common';
 import { Component } from '@angular/core';
+import { PopoverComponent } from '../popover/popover.component';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [NgClass],
+  imports: [NgClass, PopoverComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
