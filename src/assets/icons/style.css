@@ -63,7 +63,6 @@
 }
 .nt-moon:before {
   content: "\e90c";
-  color: #1c274c;
 }
 .nt-note:before {
   content: "\e90d";

@@ -13,6 +13,8 @@ export class HeaderComponent {
 
   buttons: any[]
   showSearch: boolean = false
+  hidden: boolean = false
+  theme: string = 'nt-moon'
 
   constructor() {
     this.buttons = [
@@ -24,8 +26,12 @@ export class HeaderComponent {
     ]
   }
 
-  // changeTheme(): void {
-  //   this.theme_service.toggleTheme()
-  // }
+  changeTheme(): void {
+    this.hidden = true
+    setTimeout(() => {
+      this.theme = this.theme === 'nt-moon' ? 'nt-sun' : 'nt-moon'
+      this.hidden = false
+    }, 500)
+  }
 
 }
