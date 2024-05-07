@@ -11,6 +11,7 @@ export class ThemeService {
 
   constructor(rendererFactory: RendererFactory2) {
     this.renderer = rendererFactory.createRenderer(null, null)
+    this.checkTheme()
   }
 
   changeTheme() {
@@ -23,6 +24,13 @@ export class ThemeService {
     } else {
       this.renderer.removeClass(document.documentElement, 'dark')
       localStorage.setItem('theme', 'light')
+    }
+  }
+
+  private checkTheme() {
+    const theme = localStorage.getItem('theme')
+    if (theme === 'dark') {
+      this.renderer.addClass(document.documentElement, 'dark')
     }
   }
 }

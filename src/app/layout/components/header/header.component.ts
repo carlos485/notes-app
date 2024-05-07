@@ -1,6 +1,7 @@
 import { NgClass } from '@angular/common';
 import { Component } from '@angular/core';
 import { PopoverComponent } from '../popover/popover.component';
+import { ThemeService } from '../../../services/theme.service';
 
 @Component({
   selector: 'app-header',
@@ -10,13 +11,12 @@ import { PopoverComponent } from '../popover/popover.component';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
-
   buttons: any[]
   showSearch: boolean = false
   hidden: boolean = false
   theme: string = 'nt-moon'
 
-  constructor() {
+  constructor(private readonly theme_service: ThemeService) {
     this.buttons = [
       { icon: 'nt-search', class: 'bg-teal-300 dark:bg-teal-500' },
       { icon: 'nt-home', class: 'bg-cyan-400 dark:bg-cyan-500' },
@@ -31,6 +31,7 @@ export class HeaderComponent {
     setTimeout(() => {
       this.theme = this.theme === 'nt-moon' ? 'nt-sun' : 'nt-moon'
       this.hidden = false
+      this.theme_service.changeTheme()
     }, 500)
   }
 
