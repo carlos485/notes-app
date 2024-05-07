@@ -14,7 +14,7 @@ export class HeaderComponent {
   buttons: any[]
   showSearch: boolean = false
   hidden: boolean = false
-  theme: string = 'nt-moon'
+  theme: string
 
   constructor(private readonly theme_service: ThemeService) {
     this.buttons = [
@@ -24,6 +24,8 @@ export class HeaderComponent {
       { icon: 'nt-check-circle', class: 'bg-yellow-400 dark:bg-yellow-500' },
       { icon: 'nt-book', class: 'bg-amber-500 dark:bg-amber-600' }
     ]
+    const isDark = localStorage.getItem('theme') === 'dark'
+    this.theme = isDark ? 'nt-sun' : 'nt-moon'
   }
 
   changeTheme(): void {
