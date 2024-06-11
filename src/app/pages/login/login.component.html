@@ -1,4 +1,4 @@
-<div
+<!-- <div
   class="w-96 h-34rem overflow-hidden bg-white dark:bg-zinc-700 text-white transition-all duration-700 ease-in-out"
   [ngClass]="{ 'h-45rem': viewRegister }"
 >
@@ -29,6 +29,16 @@
         [register]="true"
         (select)="viewRegister = true"
       />
+    </div>
+  </div>
+</div> -->
+<div class="w-screen h-screen bg-login flex justify-center items-center">
+  <div class="p-2 bg-red-500 grid gap-4">
+    <div class="text-center text-2xl font-semibold">Iniciar Sesión</div>
+    <div class="grid gap-2">
+      <app-input placeholder="Usuario" iconLeft="nt-user" />
+      <app-input placeholder="Contraseña" iconLeft="nt-user" />
+      <app-button label="Ingresar" icon="nt-login" class="primary" />
     </div>
   </div>
 </div>
